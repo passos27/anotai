@@ -1,0 +1,78 @@
+/* Define o estilo para o corpo do documento e o elemento html */
+body, html{
+    margin: 0; /* Remove a margem padrão */
+    height: 100%; /* Define a altura para ocupar 100% do viewport */
+}
+
+/* Estilos para o elemento com ID 'conteudo' */
+#conteudo {
+    display: grid; /* Utiliza display grid para organizar o conteúdo */
+    height: 100%; /* Define a altura para 100% do viewport */
+    gap: 5px; /* Espaçamento entre os elementos do grid */
+    grid-template-areas: /* Define as áreas do grid */
+      "header"
+      "section";
+    grid-template-rows: 5fr 90fr; /* Define a proporção das linhas do grid */
+    grid-template-columns: 100fr; /* Define a proporção das colunas do grid */
+    background-color: #f7f7f7f7; /* Cor de fundo */
+}
+
+/* Estilos para elementos com a classe 'logo' */
+.logo{
+    width: auto; /* Largura automática */
+    overflow: hidden; /* Oculta conteúdo que exceda os limites do elemento */
+    display: block; /* Define como bloco, ocupando uma linha inteira */
+    animation: aumenta 10s; /* Aplica animação chamada 'aumenta' com duração de 10 segundos */
+}
+
+/* Define as etapas da animação 'aumenta' */
+@keyframes aumenta {
+    from { /* Início da animação */
+        width: 0; /* Largura inicial é 0 */
+    }
+    to { /* Final da animação */
+        width: 100%; /* Largura final é 100% */
+    }
+}
+
+/* Estilos para elementos com a classe 'notas' */
+.notas{
+    display: flex; /* Utiliza flexbox para organizar os itens */
+    flex-direction: row; /* Os itens são dispostos em linha */
+    justify-content: space-between; /* Espaçamento entre os itens é distribuído igualmente */
+    flex-wrap: wrap; /* Permite que os itens se ajustem e quebrem a linha se necessário */
+    justify-content: center; /* Centraliza os itens no eixo principal */
+    gap: 2%; /* Espaçamento entre os itens */
+    row-gap: 10px; /* Espaçamento vertical entre as linhas de itens */
+}
+
+/* Estilos para o elemento 'header' */
+header {
+    grid-area: header; /* Define a área do grid para o cabeçalho */
+    background: linear-gradient(90deg, #667eea 0%, #704ca8 100%); /* Gradiente de fundo */
+    display: flex; /* Utiliza flexbox */
+    flex-direction: row; /* Itens dispostos em linha */
+    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: space-between; /* Espaçamento entre os itens é distribuído igualmente */
+    padding: 1%; /* Espaçamento interno de 1% */
+}
+
+/* Estilos para o elemento 'section' */
+section {
+    grid-area: section; /* Define a área do grid para a seção */
+}
+
+/* Estilos específicos para dispositivos com largura máxima de 575.98px */
+@media (max-width: 575.98px) {
+    header {
+        flex-direction: column; /* Em telas menores, os itens do cabeçalho são dispostos em coluna */
+    }
+    @keyframes aumenta {
+        from { /* Início da animação */
+            opacity: 0; /* Opacidade inicial é 0 */
+        }
+        to { /* Final da animação */
+            opacity: 1; /* Opacidade final é 1 */
+        }
+    }
+}
